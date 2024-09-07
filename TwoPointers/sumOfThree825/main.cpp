@@ -1,5 +1,7 @@
 #include <iostream>
 
+#define TARGET      (825)
+
 using namespace std;
 
 
@@ -11,7 +13,7 @@ int getSum(int first, int sec, int third)
 int main()
 {
     /*the array must be sorted array to apply the two pointers pattern*/
-    int arr[] = {1,2,3,4,5,7,8};
+    int arr[] = {100, 200, 250, 275, 300, 325, 400, 450, 500, 550, 600, 700};
     int fixed = 0;
     int left = 1;
     int len = (sizeof(arr)/4) ;
@@ -19,9 +21,9 @@ int main()
 
     while(fixed < len)
     {
-        if(getSum(arr[fixed], arr[left], arr[right]) > 20)
+        if(getSum(arr[fixed], arr[left], arr[right]) > TARGET)
             right--;
-        else if(getSum(arr[fixed], arr[left], arr[right]) < 20)
+        else if(getSum(arr[fixed], arr[left], arr[right]) < TARGET)
             left++;
         else
         {
